@@ -17,3 +17,7 @@
 	https://champierre.github.io/speech2scratch/speech2scratch.js
 	```
 4. On Warning dialog, click "I understand, continue" if you trust Speech2Scratch.
+
+## Reference
+
+- http://jellyware.jp/kurage/iot/webspeechapi.html

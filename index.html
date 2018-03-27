@@ -4,31 +4,38 @@
   <title>Speech2Scratch</title>
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
-window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
-var recognition = new webkitSpeechRecognition();
-recognition.lang = 'ja';
 
 var ws = new WebSocket('ws://localhost:8080');
 
-recognition.addEventListener('result', function(event){
-  var text = event.results.item(0).item(0).transcript;
-  $("#result_text").val(text);
-  ws.send(JSON.stringify({command: 'speech', speech: text}));
-}, false);
+function recognize() {
+  window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+  var recognition = new webkitSpeechRecognition();
+  recognition.lang = 'ja';
+  // recognition.interimResults = true;
+  // recognition.continuous = true;
 
-// 録音開始
-function record()
-{
+  recognition.onsoundend = function() {
+    console.log("停止中");
+    recognize();
+  }
+
+  recognition.addEventListener('result', function(event){
+    var text = event.results.item(0).item(0).transcript;
+    $("#result_text").val(text);
+    ws.send(JSON.stringify({command: 'speech', speech: text}));
+  }, false);
+
   recognition.start();
 }
 </script>
 </head>
 
 <body>
+<h1>Speech2Scratch 0.0.2</h1>
 
 <textarea id="result_text" cols="100" rows="10">
 </textarea>
 <br />
-<input type="button" onClick="record()" value="録音開始" />
+<input type="button" onClick="recognize()" value="Start" />
 </body>
 </html>

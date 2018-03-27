@@ -3,7 +3,7 @@ const PORT = 8080;
 var wss = new WebSocketServer({port: PORT});
 var connections = [];
 
-console.log("Starting webspeech2scratch 0.0.1");
+console.log("Starting webspeech2scratch 0.0.2");
 
 var webclient = require("request");
 

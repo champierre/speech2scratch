@@ -1,6 +1,6 @@
 {
   "name": "Speech2Scratch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Connect Web Speech API to ScratchX.",
   "main": "speech2scratch_helper.js",
   "scripts": {
