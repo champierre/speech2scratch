@@ -54,5 +54,5 @@
         ]
     };
 
-    ScratchExtensions.register('WebSpeech2Scratch', descriptor, ext);
+    ScratchExtensions.register('Speech2Scratch', descriptor, ext);
 })({});

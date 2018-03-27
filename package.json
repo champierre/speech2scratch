@@ -1,8 +1,8 @@
 {
-  "name": "webspeech2scratch",
+  "name": "Speech2Scratch",
   "version": "0.0.1",
   "description": "Connect Web Speech API to ScratchX.",
-  "main": "webspeech2scratch_helper.js",
+  "main": "speech2scratch_helper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
