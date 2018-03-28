@@ -5,19 +5,43 @@
 - Chrome browser
 - macOS High Sierra(10.13.3)
 
+## Setup
+
+1. Install Node.js from https://nodejs.org/ja/.
+
+2. Download the source code of Speech2Scratch from https://github.com/champierre/speech2scratch.
+
+3. Unzip the ZIP file.
+
+	```
+	% unzip speech2scratch-master.zip
+	```
+
+4. Install required packages.
+
+	```
+	% mv speech2scratch-master speech2scratch
+	% cd speech2scratch
+	% npm install
+	```
+
 ## How to use
 
-1. Open [Speech2Scratch](https://champierre.github.io/speech2scratch/) page on Chrome browser.
+1. Start Speech2Scratch Helper.
 
-2. Open [ScratchX](http://scratchx.org/) page.
+	```
+	% node speech2scratch_helper.js
+	```
 
-3. Click "Open Extension URL" and paste the following URL, then click "Open".
+2. [Speech2Scratch](https://champierre.github.io/speech2scratch/) page and [ScratchX](http://scratchx.org/?url=https://champierre.github.io/speech2scratch/speech2scratch.js) page should be automatically opened. If you cannot open ScratchX with the extension loaded, open [ScratchX](http://scratchx.org/) page, click "Open Extension URL" and paste the following URL, then click "Open".
 
 	```
 	https://champierre.github.io/speech2scratch/speech2scratch.js
 	```
-4. On Warning dialog, click "I understand, continue" if you trust Speech2Scratch.
+
+3. On Warning dialog of ScratchX, click "I understand, continue".
 
 ## Reference
 
+- https://qiita.com/inouet/items/2c9e218c05f547bb6852
 - http://jellyware.jp/kurage/iot/webspeechapi.html
