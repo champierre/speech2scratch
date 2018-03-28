@@ -1,6 +1,6 @@
 {
   "name": "Speech2Scratch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Connect Web Speech API to ScratchX.",
   "main": "speech2scratch_helper.js",
   "scripts": {
@@ -12,7 +12,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "socket.io": "^2.0.4",
-    "request": "latest"
+    "socket.io": "^2.0.4"
   }
 }

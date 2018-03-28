@@ -2,22 +2,22 @@ var WebSocketServer = require('ws').Server;
 const PORT = 8080;
 var wss = new WebSocketServer({port: PORT});
 var connections = [];
-var exec = require('child_process').exec;
 
-console.log("Starting webspeech2scratch 0.0.2");
+console.log("Starting webspeech2scratch 0.0.3...");
+console.log("");
+console.log("Ctrl+C to stop");
+console.log("");
+console.log("Setup");
+console.log("1. Open https://champierre.github.io/speech2scratch/");
+console.log("2. Open http://scratchx.org/?url=https://champierre.github.io/speech2scratch/speech2scratch.js");
+console.log("");
 
-exec('open https://champierre.github.io/speech2scratch/', function(err, stdout, stderr){
-  console.log("Opened https://champierre.github.io/speech2scratch/");
-});
-
-exec('open http://scratchx.org/?url=https://champierre.github.io/speech2scratch/speech2scratch.js', function(err, stdout, stderr){
-  console.log("Opened http://scratchx.org/?url=https://champierre.github.io/speech2scratch/speech2scratch.js");
-});
-
-var webclient = require("request");
-
-wss.on('connection', function(ws) {
-  console.log('client connected');
+wss.on('connection', function(ws, req) {
+  if (req.url == '/recognition') {
+    console.log('Speech recognition client is connected.');
+  } else if (req.url == '/scratchx') {
+    console.log('ScratchX extension is connected.');
+  }
   connections.push(ws);
 
   ws.on('close', function() {

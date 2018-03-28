@@ -10,7 +10,7 @@
     };
 
     ext.connect = function() {
-      ws = new WebSocket('ws://localhost:8080');
+      ws = new WebSocket('ws://localhost:8080/scratchx');
       ws.onmessage = function(evt) {
         data = JSON.parse(evt.data);
         if (data.command == 'speech') {

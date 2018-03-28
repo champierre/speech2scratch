@@ -33,13 +33,15 @@
 	% node speech2scratch_helper.js
 	```
 
-2. [Speech2Scratch](https://champierre.github.io/speech2scratch/) page and [ScratchX](http://scratchx.org/?url=https://champierre.github.io/speech2scratch/speech2scratch.js) page should be automatically opened. If you cannot open ScratchX with the extension loaded, open [ScratchX](http://scratchx.org/) page, click "Open Extension URL" and paste the following URL, then click "Open".
+2. Open [Speech2Scratch](https://champierre.github.io/speech2scratch/) page.
+
+3. Open [ScratchX](http://scratchx.org/?url=https://champierre.github.io/speech2scratch/speech2scratch.js) page with the extension loaded. If you cannot open ScratchX with the extension loaded, open [ScratchX](http://scratchx.org/) page, click "Open Extension URL" and paste the following URL, then click "Open".
 
 	```
 	https://champierre.github.io/speech2scratch/speech2scratch.js
 	```
 
-3. On Warning dialog of ScratchX, click "I understand, continue".
+4. On Warning dialog of ScratchX, click "I understand, continue".
 
 ## Reference
 

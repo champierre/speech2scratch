@@ -5,17 +5,15 @@
 <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 <script>
 
-var ws = new WebSocket('ws://localhost:8080');
+var ws = new WebSocket('ws://localhost:8080/recognition');
 
 function recognize() {
   window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
   var recognition = new webkitSpeechRecognition();
   recognition.lang = 'ja';
-  // recognition.interimResults = true;
-  // recognition.continuous = true;
 
   recognition.onsoundend = function() {
-    console.log("停止中");
+    console.log("Stopped");
     recognize();
   }
 
@@ -31,7 +29,7 @@ function recognize() {
 </head>
 
 <body>
-<h1>Speech2Scratch 0.0.2</h1>
+<h1>Speech2Scratch 0.0.3</h1>
 
 <textarea id="result_text" cols="100" rows="10">
 </textarea>
