@@ -8,7 +8,7 @@ const blockIconURI = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYA
  * When it was loaded as a module, 'extensionURL' will be replaced a URL which is retrieved from.
  * @type {string}
  */
- let extensionURL = 'https://champierre.github.io/speech2scratch/dist/speech2scratch.mjs';
+let extensionURL = 'https://champierre.github.io/speech2scratch/speech2scratch.mjs';
 
 class Scratch3Speech2Scratch {
 
@@ -50,8 +50,9 @@ class Scratch3Speech2Scratch {
 
     getInfo () {
         return {
-            id: 'speech2scratch',
-            name: 'Speech2Scratch',
+            id: Scratch3Speech2Scratch.EXTENSION_ID,
+            name: Scratch3Speech2Scratch.EXTENSION_NAME,
+            extensionURL: Scratch3Speech2Scratch.extensionURL,
             blockIconURI: blockIconURI,
             blocks: [
                 {
