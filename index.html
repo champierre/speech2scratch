@@ -1,39 +1,13 @@
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8" />
-  <title>Speech2Scratch</title>
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script>
-
-var ws = new WebSocket('ws://localhost:8080/recognition');
-
-function recognize() {
-  window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
-  var recognition = new webkitSpeechRecognition();
-  recognition.lang = 'ja';
-
-  recognition.onsoundend = function() {
-    console.log("Stopped");
-    recognize();
-  }
-
-  recognition.addEventListener('result', function(event){
-    var text = event.results.item(0).item(0).transcript;
-    $("#result_text").val(text);
-    ws.send(JSON.stringify({command: 'speech', speech: text}));
-  }, false);
-
-  recognition.start();
-}
-</script>
-</head>
-
-<body>
-<h1>Speech2Scratch 0.0.3</h1>
-
-<textarea id="result_text" cols="100" rows="10">
-</textarea>
-<br />
-<input type="button" onClick="recognize()" value="Start" />
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google" value="notranslate">
+    <link rel="shortcut icon" href="static/favicon.ico">
+    <title>Scratch 3.0 GUI</title>
+    
+  </head>
+  <body>
+  <script type="text/javascript" src="lib.min.js"></script><script type="text/javascript" src="chunks/gui.js"></script></body>
 </html>
