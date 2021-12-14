@@ -80,7 +80,7 @@ var blockIconURI = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAA
  * @type {string}
  */
 
-var extensionURL = 'https://champierre.github.io/speech2scratch/dist/speech2scratch.mjs';
+var extensionURL = 'https://champierre.github.io/speech2scratch/speech2scratch.mjs';
 
 var Scratch3Speech2Scratch = /*#__PURE__*/function () {
   function Scratch3Speech2Scratch(runtime) {
@@ -94,8 +94,9 @@ var Scratch3Speech2Scratch = /*#__PURE__*/function () {
     key: "getInfo",
     value: function getInfo() {
       return {
-        id: 'speech2scratch',
-        name: 'Speech2Scratch',
+        id: Scratch3Speech2Scratch.EXTENSION_ID,
+        name: Scratch3Speech2Scratch.EXTENSION_NAME,
+        extensionURL: Scratch3Speech2Scratch.extensionURL,
         blockIconURI: blockIconURI,
         blocks: [{
           opcode: 'startRecognition',
