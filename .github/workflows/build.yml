@@ -1,0 +1,34 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - "!*"
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: LLK/scratch-gui
+          ref: develop
+      - run: npm install
+      - uses: actions/checkout@v2
+        with:
+          path: ./speech2scratch
+      - run: sh ./speech2scratch/install.sh
+      - run: npm run build
+      - name: npm install under speech2scratch
+        run: npm install
+        working-directory: ./speech2scratch
+      - name: Build speech2scratch.mjs for xcratch
+        run: npm run build
+        working-directory: ./speech2scratch
+      - name: Copy speech2scratch.mjs to build folder
+        run: cp ./speech2scratch/dist/speech2scratch.mjs ./build
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
