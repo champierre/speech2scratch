@@ -8237,6 +8237,7 @@ var Scratch3Speech2Scratch = /*#__PURE__*/function () {
         _this.speech = event.results[0][0].transcript;
       };
 
+      this.speech = '';
       recognition.start();
     }
   }, {
