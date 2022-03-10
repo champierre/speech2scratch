@@ -78,6 +78,7 @@ class Scratch3Speech2Scratch {
         recognition.onresult = (event) => {
             this.speech = event.results[0][0].transcript;
         }
+        this.speech = '';
         recognition.start();
     }
 
