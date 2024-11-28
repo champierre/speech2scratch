@@ -25,3 +25,8 @@ URL入力欄に https://champierre.github.io/speech2scratch/speech2scratch.mjs �
 ### Stretch3(ストレッチスリー)からの利用
 
 [Strech3](https://stretch3.github.io/)をブラウザで開き、「拡張機能を選ぶ」画面でSpeech2Scratchを選ぶことで利用できます。
+
+## Licence(ライセンス)
+
+- SpeechScratchには [AGPL-3.0 license](./LICENSE) が適用されます。オープンソースで、誰でも自由に利用できます。授業やワークショップで使用でき、商用利用も認められています。あなたやあなたの生徒さんがSpeech2Scratchを使用して何か面白いプロジェクトを作成したときは、ぜひハッシュタグ #speech2scratch を使用してSNSで共有するか、連絡先までお知らせください。以下の「活用例」に追加させていただきます。
+
